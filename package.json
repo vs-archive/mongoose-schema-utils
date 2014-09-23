@@ -1,0 +1,37 @@
+{
+  "name": "mongoose-schema-utils",
+  "version": "0.1.0",
+  "main": "./lib/index.js",
+  "description": "Mongoose schema utils as a helper for plugins",
+  "homepage": "https://github.com/valorkin/mongoose-schema-utils",
+  "bugs": "https://github.com/valorkin/mongoose-schema-utils/issues",
+  "author": {
+    "name": "Dmitriy Shekhovtsov",
+    "email": "valorkin@gmail.com",
+    "url": "https://github.com/valorkin"
+  },
+  "keywords": ["mongodb", "mongoose", "model", "schema"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/valorkin/mongoose-schema-utils"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "scripts": {
+    "jshint": "gulp lint"
+  },
+  "dependencies": {
+    "lodash": "2.*"
+  },
+  "peerDependencies": {
+    "mongoose": "*"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.7",
+    "gulp-jshint": "^1.8.4",
+    "jshint-stylish": "^1.0.0"
+  }
+}
