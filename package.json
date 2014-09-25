@@ -1,6 +1,6 @@
 {
   "name": "mongoose-schema-utils",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "main": "./lib/index.js",
   "description": "Mongoose schema utils as a helper for plugins",
   "homepage": "https://github.com/valorkin/mongoose-schema-utils",

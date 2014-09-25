@@ -1,6 +1,12 @@
 mongoose-schema-utils
 ================
 
+In development...
+
+This module will expose several plugin utility methods, to simplify work with mongoose schema:
+ - normalize
+ - flatten
+ - filter
 
 ## License
 
