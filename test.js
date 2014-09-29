@@ -32,29 +32,29 @@ var subSchema = new Schema({
 });
 
 var schema = new Schema({
-  // exception
-  //type: {type: String, enum: ['on', 'off']},
-  //// nested type with mixed types
-  //nested: { file: {name:String, image: {type:String}}},
-  //// simple types
-  //str: String, strType: {type: String, enum: ['on', 'off']},
-  //num: Number, numType: {type: String, some: true},
-  //bool: Boolean, boolType: {type: Boolean, some: true},
-  //arr: [], arrType: {type:[]},
-  //simpleArr: [String], simpleArrType: {type:[String]},
-  ////buf: Buffer, bufType: {type: Buffer},
-  //date: Date, dateType: {type: Date, some: true},
-  //objId: ObjectId, objIdType: { type: ObjectId, ref: 'Users'},
-  //// mixed types
-  //mix: Mixed, mixType: { type: Mixed },
-  //obj: {}, objType: { type: {}},
+  //exceptional
+  type: {type: String, enum: ['on', 'off']},
+  // nested type with mixed types
+  nested: { file: {name:String, image: {type:String}}},
+  // simple types
+  str: String, strType: {type: String, enum: ['on', 'off']},
+  num: Number, numType: {type: String, some: true},
+  bool: Boolean, boolType: {type: Boolean, some: true},
+  arr: [], arrType: {type:[]},
+  simpleArr: [String], simpleArrType: {type:[String]},
+  buf: Buffer, bufType: {type: Buffer},
+  date: Date, dateType: {type: Date, some: true},
+  objId: ObjectId, objIdType: { type: ObjectId, ref: 'Users'},
+  // mixed types
+  mix: Mixed, mixType: { type: Mixed },
+  obj: {}, objType: { type: {}},
   sub: sub, subType: {type: sub, private: true, some1: {prop: true}},
-  // mixed type
-  //subArr: [sub], subArrType: { type: [sub] },
-  //// sub schema type
-  //subSch: [subSchema], subSchType: {type: [subSchema]}
-  // schema can not be a type
-  //subSchema: subSchema, subSchemaType: {type: subSchema},
+  //mixed type
+  subArr: [sub], subArrType: { type: [sub] },
+  // sub schema type
+  subSch: [subSchema], subSchType: {type: [subSchema]}
+  //schema can not be a type
+  //subSchema: subSchema, subSchemaType: {type: subSchema}
 });
 
 schema.plugin(schemaNormalizer);
