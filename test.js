@@ -1,8 +1,10 @@
+var util = require('util');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var schemaNormalizer = require('./lib');
 var ObjectId = mongoose.Schema.Types.ObjectId;
 var Mixed = mongoose.Schema.Types.Mixed;
+
+var Utils = require('./lib');
 
 var sub = {
   // simple types
@@ -58,5 +60,23 @@ var schema = new Schema({
   //subSchema: subSchema, subSchemaType: {type: subSchema}
 });
 
-schema.plugin(schemaNormalizer);
+schema.plugin(function (schema) {
+  var utils = new Utils(schema);
+  var normalized = utils.schema;
+  //console.warn(util.inspect(normalized, {depth: null}));
+
+  var flatten = utils.flatten();
+  console.log(util.inspect(flatten, {depth: null}));
+  utils.flatEach(flatten, function(val, key){
+    //console.log(key);
+  });
+  var r = utils.flatReduce(flatten, function(result, val, key){
+    if (val.some){
+      result[key] = val;
+    }
+    return result;
+  });
+  //console.log(r);
+});
+
 mongoose.model('schema', schema, 'schema');
