@@ -6,6 +6,7 @@ var Mixed = mongoose.Schema.Types.Mixed;
 
 var sub = {
   // simple types
+  nested: { file: {name:String, image: {type:String}}},
   str: String, strType: {type: String, enum: ['on', 'off']},
   num: Number, numType: {type: Number, some: true, some1: {prop: 'test'}, private: false},
   bool: Boolean, boolType: {type: Boolean, some: true},
@@ -52,7 +53,7 @@ var schema = new Schema({
   //mixed type
   subArr: [sub], subArrType: { type: [sub] },
   // sub schema type
-  subSch: [subSchema], subSchType: {type: [subSchema]}
+  subSch: [subSchema], subSchType: {type: [subSchema], test: 'foo'}
   //schema can not be a type
   //subSchema: subSchema, subSchemaType: {type: subSchema}
 });
