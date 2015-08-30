@@ -1,7 +1,7 @@
 mongoose-schema-utils
 ================
 
-In development...
+# deprecate and remove
 
 This module will expose several plugin utility methods, to simplify work with mongoose schema:
  - normalize
